@@ -20,6 +20,14 @@
   {{/products}}
   </ul>
 <hr/>
+  <h2>Lista de produtos acima de R$10</h2>
+  <ul>
+  {{! PRODUTOS }}
+  {{#expensive}}
+{{>partials/productItem}}
+  {{/expensive}}
+  </ul>
+<hr/>
 
 {{! FRASE DO DIA }}
 <ul>
