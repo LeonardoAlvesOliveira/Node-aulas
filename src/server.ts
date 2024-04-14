@@ -12,7 +12,7 @@ server.engine('mustache', mustache())
 
 
 server.use('/static', express.static(path.join(__dirname, '../public')))
-
+server.use(express.urlencoded({ extended: true }))
 server.use(routes)
 
 server.use((req: Request, res: Response) => {

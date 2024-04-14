@@ -37,13 +37,17 @@ rounter.get('/name', (req: Request, res: Response) => {
   })
 })
 rounter.get('/age', (req: Request, res: Response) => {
+  res.render('pages/age')
+})
+
+rounter.post('/age', (req: Request, res: Response) => {
   let mostrarIdade: boolean = false
   let idade: number = 0
 
-  if (req.query.ano) {
-    let anoNascimento: number = parseInt(req.query.ano as string)
+  if (req.body.ano) {
+    let anoNascimento: number = parseInt(req.body.ano as string)
     let anoAtual: number = new Date().getFullYear()
-    let idade: number = anoAtual - anoNascimento
+    idade = anoAtual - anoNascimento
     mostrarIdade = true
   }
   res.render('pages/age', {
