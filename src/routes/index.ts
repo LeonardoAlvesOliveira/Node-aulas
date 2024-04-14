@@ -7,7 +7,7 @@ rounter.get('/', (req: Request, res: Response) => {
   if (age > 50) {
     showOld = true
   }
-  res.render('home', {
+  res.render('pages/home', {
     name: 'testador',
     lastName: 'master',
     showOld,
@@ -17,16 +17,16 @@ rounter.get('/', (req: Request, res: Response) => {
       { title: 'nescau', price: 12 }
     ],
     dayPhrase: [
-      'qwertyuiop',
-      'asdfghjklç',
-      'zxcvbnm',
+      // 'qwertyuiop',
+      // 'asdfghjklç',
+      // 'zxcvbnm',
     ]
   })
 })
 rounter.get('/contact', (req: Request, res: Response) => {
-  res.send('Formulario de contato')
+  res.render('pages/contact')
 })
 rounter.get('/about', (req: Request, res: Response) => {
-  res.send('Lorem Ipsum ')
+  res.render('pages/about')
 })
 export default rounter

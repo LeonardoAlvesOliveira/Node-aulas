@@ -1,28 +1,36 @@
-<html>
-<head>
-  <title>Hello World!</title>
-  </head>
+{{>partials/header}}
 <body>
   <h1>Lorem Ipsum</h1>
+  {{! NOME }}
   <hr/>
   Eu sou {{name}} {{lastName}} !
   {{#showOld}}
-  Vc é velho
+  Vc é velho!
+  {{/showOld}}
+  {{^showOld}}
+  Vc é jovem!
   {{/showOld}}
   <hr/>
 
   <h2>Lista de produtos</h2>
   <ul>
-  
+  {{! PRODUTOS }}
   {{#products}}
-  <li>{{title}} - R$ {{price}}</li>
+{{>partials/productItem}}
   {{/products}}
   </ul>
 <hr/>
+
+{{! FRASE DO DIA }}
 <ul>
 {{#dayPhrase}}
 <li>{{.}}</li>
 {{/dayPhrase}}
+
+{{^dayPhrase}}
+NADA DE FRASE HOJE
+{{/dayPhrase}}
+
 </ul>
-</body>
-</html>
+
+{{>partials/footer}}
