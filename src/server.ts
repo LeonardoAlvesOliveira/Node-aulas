@@ -7,7 +7,7 @@ const server = express()
 
 
 server.set('view engine', 'mustache')
-server.set('view engine', path.join(__dirname, 'views'))
+server.set('views', path.join(__dirname, 'views'))
 server.engine('mustache', mustache())
 
 

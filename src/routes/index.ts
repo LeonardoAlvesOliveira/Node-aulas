@@ -1,13 +1,13 @@
 import { Router, Request, Response } from 'express'
-const rountes = Router()
+const rounter = Router()
 
-rountes.get('/', (req: Request, res: Response) => {
+rounter.get('/', (req: Request, res: Response) => {
   res.render('home')
 })
-rountes.get('/contact', (req: Request, res: Response) => {
+rounter.get('/contact', (req: Request, res: Response) => {
   res.send('Formulario de contato')
 })
-rountes.get('/about', (req: Request, res: Response) => {
+rounter.get('/about', (req: Request, res: Response) => {
   res.send('Lorem Ipsum ')
 })
-export default rountes 
+export default rounter
