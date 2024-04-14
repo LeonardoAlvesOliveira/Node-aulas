@@ -2,9 +2,11 @@ import express, { Request, Response } from 'express'
 import path from 'path'
 import mustache from 'mustache-express'
 import routes from './routes/index'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const server = express()
-
 
 server.set('view engine', 'mustache')
 server.set('views', path.join(__dirname, 'views'))
@@ -19,4 +21,4 @@ server.use((req: Request, res: Response) => {
   res.status(404).send('Pagina não encontrada!')
 })
 
-server.listen(80)
+server.listen(process.env.PORT)
